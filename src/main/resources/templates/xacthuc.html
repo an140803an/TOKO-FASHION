@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<script th:src="@{/webjars/thymeleaf/3.0.12.RELEASE/thymeleaf.min.js}"></script>
+<head>
+<meta charset="utf-8">
+<title>Đăng Ký</title>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS v5.2.1 -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+	crossorigin="anonymous">
+
+<style>
+.hover1 {
+	color: black;
+	text-decoration: none;
+}
+
+.hover1:hover {
+	color: red;
+}
+
+.hv {
+	color: #fff;
+	background-color: #00a2d1;
+	border-color: #00a2d1;
+	box-shadow: none;
+}
+
+.hv:hover {
+	color: #00a2d1;
+	background-color: #fff;
+}
+</style>
+</head>
+
+<body>
+	<header th:replace="~{/header}"></header>
+	<main>
+		<div class="row mt-5 mb-5">
+			<div class="col-md-4 "></div>
+			<div class="col-12 col-sm-12 col-md-4">
+				<form action="/XacThuc" th:object="${code}" method="post">
+					<center>
+						<h4>Xác thực tài khoản</h4>
+						<p>
+							Nếu có tài khoản, <a href="DangNhap">Đăng nhập tại đây</a>
+						</p>
+						<input class="mb-3 p-2" style="width: 60%;" type="text"
+							placeholder="Nhập mã xác thực được gửi vào email" name="codext" th:field="*{verifycode}"
+							id=""> <br>
+						<button class="mb-3 p-2 hv" style="width: 60%;" type="submit">Xác
+							Thực</button>
+
+					</center>
+				</form>
+			</div>
+		</div>
+		<div class="col-md-4"></div>
+	</main>
+	
+<div class="container-fluid" style="background-color: rgb(164, 169, 175);">
+	<div th:include="footer :: footer"></div>
+	<!-- Bootstrap JavaScript Libraries -->
+	<script
+		src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+		integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+		crossorigin="anonymous">
+		
+	</script>
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+		integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+		crossorigin="anonymous">
+		
+	</script>
+</body>
+</html>

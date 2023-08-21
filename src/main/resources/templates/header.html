@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/css/bootstrap.min.css" rel="stylesheet"
+        type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"
+        integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
+        integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    
+    .hover1 {
+        color: black;
+        text-decoration: none;
+    }
+
+    .hover1:hover {
+        color: red;
+    }
+
+    /* phần chi tiết */
+    .row .duongKe {
+        content: "";
+        display: block;
+        background: #00a2d1 center center no-repeat;
+        width: 100px;
+        height: 4px;
+        margin: 20px auto 30px;
+    }
+
+    .blockprice {
+        position: relative;
+        display: inline-block;
+    }
+
+    .blockprice p {
+        position: absolute;
+        top: 87%;
+        right: 0;
+        color: white;
+        font-size: 20px;
+        background-color: #00a2d1;
+        border-radius: 20px 1px 1px;
+    }
+
+    body {
+        background-color: #fff;
+        color: black;
+    }
+
+    .wap-ss-img {
+        text-align: center;
+        width: 100%;
+    }
+
+    .wap-ss-img img {
+        height: 250px;
+        margin: 0 auto;
+    }
+
+    /* Điều chỉnh khoảng cách giữa các sản phẩm */
+    .wap-items-ss {
+        margin-bottom: 20px;
+    }
+
+    /* Điều chỉnh kích thước hình ảnh để không bị đè lên nhau */
+    .wap-items-ss img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .textleft {
+        text-align: center;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+        font-family: fontawesome;
+        font-size: 30px;
+        color: black;
+    }
+
+    .slick-prev:before {
+        content: '\f100';
+    }
+
+    .slick-next:before {
+        content: '\f101';
+    }
+
+    .menu {
+        background: #303030;
+        text-align: right;
+        height: 30px;
+        width: 100%;
+        padding: 3px 60px 0px 0px;
+        overflow: hidden;
+
+    }
+
+    .menu li {
+        list-style: none;
+        position: relative;
+        display: inline-block;
+        ;
+        margin-left: 18px;
+        text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+    }
+
+    .menu a {
+        color: #fff;
+        font-family: NunitoSanRegular;
+        font-size: 12px;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .menu a:hover {
+        color: #f15e2c;
+    }
+
+    .menu a img {
+        margin-right: 7px;
+    }
+
+    .icon-search {
+        position: relative;
+        top: 1px;
+        left: 10px;
+        z-index: 2;
+        text-align: center;
+        pointer-events: none;
+    }
+
+    .form-control {
+        padding-left: 34px;
+        font-family: NunitoSanRegular;
+        font-size: 12px;
+        height: 40px;
+        width: 280px;
+        border-radius: 0px;
+    }
+
+    .form-group {
+        display: inline-block;
+        margin-bottom: 0;
+        vertical-align: middle;
+    }
+
+    .line {
+        border-right: #e3e2e2 2px solid;
+        margin-top: 12px;
+        height: 23px;
+    }
+
+    .navbar-nav .nav-item a:hover {
+        color: #f15e2c;
+    }
+
+    span.pro-percent {
+        display: inline-block;
+        padding: 3px 14px;
+        margin-left: 10px;
+        background: #f94c43;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 13px;
+        color: white;
+        vertical-align: text-bottom;
+    }
+    span.pro-price {
+        font-size: 25px;
+        font-weight: 600;
+        color: red;
+    }
+
+</style>
+
+<body>
+    <header>
+
+        <div class="container-fluid">
+            <div class="row ">
+                <ul class="menu">
+                    <li>
+                        <a href="/HoaDon"><img
+                                src="https://ananas.vn/wp-content/themes/ananas/fe-assets/images/svg/icon_tra_cuu_don_hang.svg"
+                                alt="">Tra cứu đơn hàng</a>
+                    </li>
+                    <li>
+                        <a href="/lienHe"><img
+                                src="https://ananas.vn/wp-content/themes/ananas/fe-assets/images/svg/icon_tim_cua_hang.svg"
+                                alt="">Tìm cửa hàng</a>
+                    </li>
+                    <li>
+                        <a href=""><img
+                                src="https://ananas.vn/wp-content/themes/ananas/fe-assets/images/svg/icon_heart_header.svg"
+                                alt="">Yêu thích</a>
+                    </li>
+                    <li>
+                        <a href="/DangNhap"><img
+                                src="https://ananas.vn/wp-content/themes/ananas/fe-assets/images//svg/icon_dang_nhap.svg"
+                                alt="">Đăng nhập</a>
+                    </li>
+                    <li>
+                        <a href="/GioHang"><img
+                                src="https://ananas.vn/wp-content/themes/ananas/fe-assets/images/svg/icon_gio_hang.svg"
+                                alt="">Giỏ hàng</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="row ">
+
+                <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                    <div class="container">
+
+                        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="text-center ms-5">
+                            <a class="navbar-brand" href="/trangChu"><img style="width: 130px;"
+                                    src="https://cdn.discordapp.com/attachments/1118163175775424585/1136001855252615289/logoToko.jpg"
+                                    alt="logo"></a>
+
+                        </div>
+
+                        <div class="offcanvas offcanvas-start" id="navbarSupportedContent">
+                            <div class="offcanvas-header">
+                                <h5 class="offcanvas-title" id="offcanvasLabel">
+                                    <strong class="text-center">Memu</strong>
+                                </h5>
+                                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                    aria-label="Close"></button>
+                            </div>
+
+                            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                                <li class="nav-item"><a class="nav-link active" aria-current="page"
+                                        href="/trangChu"><strong class=" fs-5 text-dark ">TRANG CHỦ</strong></a></li>
+                                <li class="line"></li>
+                                <li class="nav-item"><a class="nav-link active" aria-current="page"
+                                        href="/sanpham/list"><strong class=" fs-5 text-dark ">SẢN PHẨM
+                                        </strong></a></li>
+                                <li class="line"></li>
+
+                                <li class="nav-item"><a class="nav-link active" aria-current="page"
+                                        href="/gioiThieu"><strong class=" fs-5 text-dark ">GIỚI THIỆU
+                                        </strong></a></li>
+                                <li class="line"></li>
+                                <li class="nav-item"><a class="nav-link active" aria-current="page"
+                                        href="/lienHe"><strong class=" fs-5 text-dark ">LIÊN HỆ </strong></a></li>
+
+                            </ul>
+                            <div class=" d-sm-block d-md-none">
+                                <div class="input-group w-100">
+                                    <span class="input-group-text" id="basic-addon1"> <svg
+                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                            <path
+                                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z">
+                                            </path>
+                                        </svg>
+                                    </span> <input type="text" class="form-control" placeholder="Input group example"
+                                        aria-label="Input group example" aria-describedby="basic-addon1">
+                                </div>
+                            </div>
+                        </div>
+                        <form class="form-group" role="search">
+                            <div class=" p-1 d-none d-md-block">
+                                <input class="form-control me-0" type="search" placeholder="Tìm kiếm"
+                                    aria-label="Search">
+
+                            </div>
+                        </form>
+                    </div>
+
+                </nav>
+
+            </div>
+
+            <div class="row p-2 text-center text-dark" style="background-color: #f1f1f1;">
+                <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner fst-italic">
+                        <div class="carousel-item active" data-bs-interval="10000">
+                            <strong>HÀNG 2 TUẦN NHẬN ĐỔI - GIÀY NỮA NĂM BẢO HÀNH</strong>
+                        </div>
+                        <div class="carousel-item" data-bs-interval="2000">
+                            <strong>BUY 2 GET 10% OFF - Áp dụng với tất cả BASIC TEE</strong>
+                        </div>
+                        <div class="carousel-item">
+                            <strong>FREE SHIP toàn quốc với hóa đơn từ 800K !</strong>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </header>
+
+
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+
+        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+
+        </script>
+
+
+
+
+</body>
+
+</html>
+<script type="text/javascript" src="frontend/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
+    integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"
+    integrity="sha512-eP8DK17a+MOcKHXC5Yrqzd8WI5WKh6F1TIk5QZ/8Lbv+8ssblcz7oGC8ZmQ/ZSAPa7ZmsCU4e/hcovqR8jfJqA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="text/javascript">
+    $('.filtering').slick({
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        arrows: true,
+        speed: 300
+    });
+
+    var filtered = false;
+
+    $('.js-filter').on('click', function () {
+        if (filtered === false) {
+            $('.filtering').slick('slickFilter', ':even');
+            $(this).text('Unfilter Slides');
+            filtered = true;
+        } else {
+            $('.filtering').slick('slickUnfilter');
+            $(this).text('Filter Slides');
+            filtered = false;
+        }
+    });
+</script>
